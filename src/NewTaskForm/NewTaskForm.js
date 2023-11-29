@@ -10,6 +10,9 @@ export default function NewTaskForm({ onAddTask }) {
       onKeyDown={event => {
         if (event.key !== "Enter" || name.length < 2 || (seconds === "" && minutes === "")) return;
         onAddTask({ name, minutes, seconds });
+        setName("");
+        setMinutes("");
+        setSeconds("");
       }}
     >
       <input
